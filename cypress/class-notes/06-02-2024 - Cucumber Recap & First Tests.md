@@ -1,5 +1,5 @@
 
-# Setting up Cypress with Cucumber Preprocessor
+# Setting up Cypress with Cucumber Preprocessor with TypeScript
 
 ## Step-by-Step Guide
 
