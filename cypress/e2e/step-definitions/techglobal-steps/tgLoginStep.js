@@ -1,18 +1,38 @@
-const { When, Then } = require('@badeball/cypress-cucumber-preprocessor')
-const TGLoginPage = require('../../../pages/TGLoginPage')
+Feature: Login Feature
 
-const tgLoginPage = new TGLoginPage()
+  # Scenario: Validate Login Form
+  #   Given user navigates to "https://techglobal-training.com/frontend"
+  #   When user clicks on the "Project - Login Function" card
+  #   Then user should see the "Login Function" page heading
+  #   When user enter username as "johnode" and password as "123456"
+  #   And user clicks Login button
+  #   Then user should see a "Invalid Username entered!"
 
-When(/^user enter username as "([^"]*)" and password as "([^"]*)"$/, (username, password) => {
-  tgLoginPage.login(username, password)
-})
+  # Scenario: Validate Login Form
+  #   Given user navigates to "https://techglobal-training.com/frontend"
+  #   When user clicks on the "Project - Login Function" card
+  #   Then user should see the "Login Function" page heading
+  #   When user enter username as "tomsmith" and password as "12345"
+  #   And user clicks Login button
+  #   Then user should see a "Invalid Username entered!"
 
-Then(/^user clicks Login button$/, () => {
-  tgLoginPage.clickLoginButton()
-})
+  # Scenario: Validate Login Form
+  #   Given user navigates to "https://techglobal-training.com/frontend"
+  #   When user clicks on the "Project - Login Function" card
+  #   Then user should see the "Login Function" page heading
+  #   When user enter username as "TechGlobal" and password as "Test1234"
+  #   And user clicks Login button
+  #   Then user should see a "You are logged in"
 
-Then(/^user should see a "([^"]*)"$/, (message) => {
-  message === 'You are logged in'
-    ? tgLoginPage.getSuccessMessage().should('have.text', message)
-    : tgLoginPage.getErrorMessage().should('have.text', message)
-})
+  Scenario Outline: Validate Login Form
+    Given user navigates to "https://techglobal-training.com/frontend"
+    When user clicks on the "Project - Login Function" card
+    Then user should see the "Login Function" page heading
+    When user enter username as "<username>" and password as "<password>"
+    And user clicks Login button
+    Then user should see a "<message>"
+    Examples:
+      | username   | password | message                   |
+      | johndoe    | 123456   | Invalid Username entered! |
+      | tomsmith   | 12345    | Invalid Username entered! |
+      | TechGlobal | Test1234 | You are logged in         |
