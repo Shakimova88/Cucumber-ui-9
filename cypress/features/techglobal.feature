@@ -1,11 +1,10 @@
 Feature: Interaction with TechGlobal HtmlElements page
 
-Background: 
-  Given user navigates to "https://techglobal-training.com/frontend/"
+  Background:
+    Given user navigates to "https://techglobal-training.com/frontend/"
     When user clicks on the "Html Elements" card
     Then user should see the "Html Elements" page heading
     Then the URL should contain "elements"
-
 
   Scenario: Validate HTML elements card, Register and Sign in Buttons
     When user clicks on the "Register" button

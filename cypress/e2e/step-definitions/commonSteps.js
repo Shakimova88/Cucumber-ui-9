@@ -1,4 +1,4 @@
-const { Then, Given, When } = require('@badeball/cypress-cucumber-preprocessor')
+const { When, Then, Given } = require('@badeball/cypress-cucumber-preprocessor')
 const TGHtmlElementsPage = require('../../pages/TGHtmlElementsPage')
 
 const tgHtmlElementsPage = new TGHtmlElementsPage()
