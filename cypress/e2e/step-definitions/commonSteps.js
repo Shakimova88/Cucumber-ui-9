@@ -14,7 +14,10 @@ When(/^user clicks on the "([^"]*)" card$/, (cardName) => {
 Then(/^the URL should contain "([^"]*)"$/, (url) => {
   cy.url().should('contain', url)
 })
+<<<<<<< HEAD
 
 Then(/^user should see the "([^"]*)" page heading$/, (heading) => {
   tgHtmlElementsPage.getHeading().should('have.text', heading)
 })
+=======
+>>>>>>> f5d286957f2ae68587b655a08958bda83437f3ba
