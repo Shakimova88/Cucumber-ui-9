@@ -1,11 +1,9 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor'
 const SmartBearLoginPage = require('../../../pages/SmartBearLoginPage')
 const SmartBearOrderPage = require('../../../pages/SmartBearOrderPage')
-const SmartBearLogoutPage = require('../../../pages/SmartBearLogoutPage')
 
 const smartBearLoginPage = new SmartBearLoginPage()
 const smartBearOrderPage = new SmartBearOrderPage()
-const smartBearLogoutPage = new SmartBearLogoutPage()
 
 Given(/^user is on "([^"]*)"$/, (url) => {
   cy.visit(url)
@@ -106,7 +104,7 @@ Then(/^validate all information entered displayed correct with the order$/, () =
     customerName: 'John Doe',
     product: 'ScreenSaver',
     quantity: '5',
-    date: '06/07/2024', // Adjusting to match the actual displayed date
+    date: '06/07/2024',
     street: '123 Main St',
     city: 'Chicago',
     state: 'IL',

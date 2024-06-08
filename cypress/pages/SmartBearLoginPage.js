@@ -1,18 +1,18 @@
 class SmartBearLoginPage {
   getUserName() {
-    cy.get('#ctl00_MainContent_username')
+    return cy.get('#ctl00_MainContent_username')
   }
 
   getPassword() {
-    cy.get('#ctl00_MainContent_password')
+    return cy.get('#ctl00_MainContent_password')
   }
 
   getLoginButton() {
-    cy.get('#ctl00_MainContent_login_button')
+    return cy.get('#ctl00_MainContent_login_button')
   }
 
   getInvalidLoginMessage() {
-    cy.get('#ctl00_MainContent_status')
+    return cy.get('#ctl00_MainContent_status')
   }
 
   // Method
